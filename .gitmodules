@@ -1,3 +1,9 @@
 [submodule "vim/bundle/vundle"]
 	path = vim/bundle/vundle
 	url = https://github.com/gmarik/vundle
+[submodule "libs/ydcv"]
+	path = libs/ydcv
+	url = https://github.com/felixonmars/ydcv
+[submodule "libs/Tiny-HTTP-Proxy"]
+	path = libs/Tiny-HTTP-Proxy
+	url = https://github.com/tkmunzwa/Tiny-HTTP-Proxy

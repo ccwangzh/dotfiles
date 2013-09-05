@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ -z "$__PUBLIC_ALIAS__" ]
+then
+__PUBLIC_ALIAS__="true"
+
+# get.ip
+alias get.ip="curl -s http://ip.3322.net"
+
+[ -f ./local.alias ] && source ./local.alias
+
+fi
