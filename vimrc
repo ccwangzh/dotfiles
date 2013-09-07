@@ -14,9 +14,10 @@ Bundle 'git://git.wincent.com/command-t.git'
 " nerdtree
 Bundle 'scrooloose/nerdtree'
 
-let mapleader=';'
-let g:mapleader=';'
+let mapleader=','
+let g:mapleader=','
 
+nmap <leader>c :CommandT<CR>
 nmap <leader>n :NERDTreeToggle<CR>
 
 " solarized

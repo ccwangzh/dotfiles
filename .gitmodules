@@ -7,3 +7,6 @@
 [submodule "libs/Tiny-HTTP-Proxy"]
 	path = libs/Tiny-HTTP-Proxy
 	url = https://github.com/tkmunzwa/Tiny-HTTP-Proxy
+[submodule "libs/smarthosts"]
+	path = libs/smarthosts
+	url = https://github.com/smarthosts/smarthosts

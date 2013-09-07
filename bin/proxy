@@ -1,0 +1,2 @@
+#!/bin/bash
+[ -f "/Users/can/Projects/git/dotfiles/libs/Tiny-HTTP-Proxy/TinyHTTPProxy.py" ] && python "/Users/can/Projects/git/dotfiles/libs/Tiny-HTTP-Proxy/TinyHTTPProxy.py" "$*"

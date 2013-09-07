@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# get path
+DOT_PATH=`pwd`
+echo "Home path at: $DOT_PATH"
+
+#git submodule init --
+#git submodule update --
+
+# link files
+# [ ! -f ~/.profile ] && ln -s $DOT_PATH/profile ~/.profile
+
+# [ ! -d ~/.vim ] && ln -s $DOT_PATH/vim ~/.vim
+
+# [ ! -f ~/.vimrc ] && ln -s $DOT_PATH/vimrc ~/.vimrc
+
+# make shell
+function make_python_bin
+{
+    __PY_FILE__="$DOT_PATH/$1"
+    __TO_FILE__="$DOT_PATH/$2"
+    
+    if [ ! -f "$__TO_FILE__" ]; then
+        __CH_PARA__=""
+        echo "Make shell at: $__TO_FILE__"
+        echo "#!/bin/bash" > "$__TO_FILE__"
+        [ $# -gt 2 ] && [ "$3" = "true" ] && __CH_PARA__="&& [ ! -z "\$*" ] "
+        echo "[ -f \"$__PY_FILE__\" ] $__CH_PARA__&& python \"$__PY_FILE__\" \"\$*\"">>"$__TO_FILE__"
+        chmod u+x $__TO_FILE__
+    fi
+}
+
+[ ! -d "$DOT_PATH/bin" ] && mkdir "$DOT_PATH/bin"
+make_python_bin "libs/ydcv/ydcv.py" "bin/dict" "true"
+make_python_bin "libs/Tiny-HTTP-Proxy/TinyHTTPProxy.py" "bin/proxy"
+
+# link hosts file
+if [ ! -f /etc/hosts.bak ] && [ -f "$DOT_PATH/libs/smarthosts/trunk/hosts" ]; then
+    echo "Backup hosts at: /etc/hosts.bak"
+    sudo mv /etc/hosts /etc/hosts.bak
+    echo "Link hosts with: $DOT_PATH/libs/smarthosts/trunk/host"
+    sudo ln -s "$DOT_PATH/libs/smarthosts/trunk/hosts" /etc/hosts
+fi
