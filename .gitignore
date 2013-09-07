@@ -3,5 +3,6 @@ Icon
 
 .Trashes
 
+bin/
 local.conf
 vim/bundle/

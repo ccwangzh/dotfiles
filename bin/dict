@@ -1,2 +1,0 @@
-#!/bin/bash
-[ -f "/Users/can/Projects/git/dotfiles/libs/ydcv/ydcv.py" ] && [ ! -z $* ] && python "/Users/can/Projects/git/dotfiles/libs/ydcv/ydcv.py" "$*"
