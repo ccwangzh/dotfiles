@@ -4,5 +4,6 @@ Icon
 .Trashes
 
 bin/
-local.conf
+local
+profile
 vim/bundle/

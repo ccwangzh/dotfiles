@@ -1,0 +1,18 @@
+#!/bin/bash
+
+function show_all_files()
+{
+    [ -x `which defaults` ] && defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder
+}
+
+function hide_all_files()
+{
+    [ -x `which defaults` ] && defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder
+}
+
+function cleanup_files()
+{
+    __LSREGISTER__="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister"
+    [ -x "$__LSREGISTER__" ] && $__LSREGISTER__ -kill -r -domain local -domain system -domain user && killall Finder
+    unset __LSREGISTER__
+}
